@@ -1,0 +1,41 @@
+.user-side-bar {
+    background-color: #0c0b3b;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+  }
+  
+  .sidebar-btn-wrapper {
+    margin-top: 20px;
+  }
+  
+  .sidebar-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .sidebar-btn a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .sidebar-btn a:hover {
+    color: #007bff;
+  }
+  
+  .sidebar-btn span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  
+.link-style {
+  text-decoration: none;
+  color:black; 
+  font-size: 16px;
+}

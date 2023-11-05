@@ -1,0 +1,42 @@
+/* PrintPage.css */
+.print-page-container {
+  display: flex;
+}
+
+.print-page-content {
+  margin-left: 20px;
+}
+
+.print-function {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.print-info {
+  border: 1px solid #e8e8e8;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Add any other styles as needed */
+
+  
+  
+  
