@@ -1,0 +1,12 @@
+.logout {
+  position: absolut;
+  margin-bottom: 10px;
+  left: 50%;
+  transform: translateX(556%);
+  transform: translateY(800%);
+  transform: rotate(-90deg);
+  color: black;
+  width: 25px;
+  height: 35px;
+  margin-top: 220px;
+}

@@ -1,0 +1,47 @@
+.spso-side-bar {
+  background-color: #9090d0;
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+}
+
+.sidebar-btn-wrapper {
+  margin-top: 20px;
+}
+
+.sidebar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+}
+
+.sidebar-btn a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.sidebar-btn a:hover {
+  color: #0c233b;
+}
+
+.sidebar-btn.selected {
+  background-color: #0a0d29;
+  color: white;
+}
+
+.sidebar-btn span {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.link-style {
+  text-decoration: none;
+  color: #ffff;
+  font-size: 16px;
+}

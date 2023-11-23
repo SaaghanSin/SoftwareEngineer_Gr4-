@@ -1,0 +1,16 @@
+.button_print {
+  height: 40px;
+  color: white;
+  background-color: #0c0b3b;
+  border: none;
+  outline: none;
+  font-family: VisbyRoundCF-DemiBold;
+  cursor: pointer;
+  transition: all 0.44s ease;
+  -webkit-animation: all 0.44s ease;
+  -moz-animation: all 0.44s ease;
+  padding: 0px 18px;
+  border-radius: 10px;
+  margin-right: 70px;
+  margin-left: 50px;
+}

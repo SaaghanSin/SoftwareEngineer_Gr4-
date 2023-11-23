@@ -1,4 +1,4 @@
-/* PrintPage.css */
+
 .print-page-container {
   display: flex;
 }
@@ -16,7 +16,7 @@
 .print-info {
   border: 1px solid #e8e8e8;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-top: 20px;
 }
 
@@ -34,9 +34,39 @@ h3 {
   font-size: 18px;
   margin-bottom: 10px;
 }
-
+.chonthongsoin,
+.taifilelen,
+.save {
+  border-radius: 10px;
+  background-color: #0c0b3b;
+  color: white;
+}
+.save {
+  width: 50px;
+  height: 30px;
+  margin-left: 50px;
+  margin-top: 15px;
+  background-color: black;
+  color: white;
+}
+.print-info-1 {
+  margin-top: 5%;
+}
+.myboxx {
+  margin-left: 40px;
+  margin-top: 30px;
+  border-color: aqua;
+  background-color: white;
+  border-radius: 10px;
+}
+.description2 {
+  margin-left: 35px;
+}
+.textbox {
+  margin-left: 20px;
+}
+.print-page-content {
+  margin-top: 25px;
+  margin-left: 280px;
+}
 /* Add any other styles as needed */
-
-  
-  
-  
