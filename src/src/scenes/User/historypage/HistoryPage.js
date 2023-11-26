@@ -2,6 +2,8 @@ import UserSideBar from "../../../components/sideBar/userSideBar";
 import EnhancedTable from "../../../components/table/table";
 import "./HistoryPage.css";
 import { ProSidebarProvider } from "react-pro-sidebar";
+import "../../../components/option_info/option2.css";
+import Clock from "../../../components/clock/clock";
 const HistoryPage = () => {
   function createData(
     id,
@@ -74,81 +76,112 @@ const HistoryPage = () => {
       2110992,
       1,
       "abc.pdf",
-      "2023-11-07 08:36",
+      "Thất bại",
       "2023-11-07 08:42",
-      5
+      "2023-11-07 08:43",
+      1
     ),
     createData(
+      1,
+      2110992,
       2,
+      "abc.pdf",
+      "Thất bại",
+      "2023-11-07 08:42",
+      "2023-11-07 08:43",
+      1
+    ),
+    createData(
+      1,
       2110992,
       3,
-      "def.pdf",
-      "2023-11-08 08:32",
-      "2023-11-08 9:01",
-      13
+      "abc.pdf",
+      "In thành công",
+      "2023-11-07 08:42",
+      "2023-11-07 08:43",
+      1
     ),
     createData(
-      2,
+      1,
       2110992,
-      3,
-      "def.pdf",
-      "2023-11-08 08:32",
-      "2023-11-08 9:01",
-      13
+      4,
+      "abc.pdf",
+      "In thành công",
+      "2023-11-07 08:42",
+      "2023-11-07 08:43",
+      1
     ),
     createData(
-      2,
-      21109922,
-      3,
-      "def.pdf",
-      "2023-11-08 08:32",
-      "2023-11-08 9:01",
-      13
+      1,
+      2110992,
+      5,
+      "abc.pdf",
+      "In thành công",
+      "2023-11-07 08:42",
+      "2023-11-07 08:43",
+      1
     ),
     createData(
-      2,
-      21120992,
-      3,
-      "def.pdf",
-      "2023-11-08 08:32",
-      "2023-11-08 9:01",
-      13
+      1,
+      2110992,
+      6,
+      "abc.pdf",
+      "In thành công",
+      "2023-11-07 08:42",
+      "2023-11-07 08:43",
+      1
     ),
     createData(
-      2,
-      21102992,
-      3,
-      "def.pdf",
-      "2023-11-08 08:32",
-      "2023-11-08 9:01",
-      13
+      1,
+      2110992,
+      7,
+      "abc.pdf",
+      "In thành công",
+      "2023-11-07 08:42",
+      "2023-11-07 08:43",
+      1
     ),
     createData(
-      2,
-      21109292,
-      3,
-      "def.pdf",
-      "2023-11-08 08:32",
-      "2023-11-08 9:01",
-      13
+      1,
+      2110992,
+      8,
+      "abc.pdf",
+      "In thành công",
+      "2023-11-07 08:42",
+      "2023-11-07 08:43",
+      1
     ),
     createData(
-      2,
-      21120992,
-      3,
-      "def.pdf",
-      "2023-11-08 08:32",
-      "2023-11-08 9:01",
-      13
+      1,
+      2110992,
+      9,
+      "abc.pdf",
+      "Thất bại",
+      "2023-11-07 08:42",
+      "2023-11-07 08:43",
+      1
+    ),
+    createData(
+      1,
+      2110992,
+      10,
+      "abc.pdf",
+      "Thất bại",
+      "2023-11-07 08:42",
+      "2023-11-07 08:43",
+      1
     ),
   ];
-
+  const handleClick = () => {
+    window.open("https://www.facebook.com/", "_blank");
+  };
   return (
     <div>
       <div className="history-page-container">
         <ProSidebarProvider>
           <UserSideBar />
         </ProSidebarProvider>
+
         <div className="history-page-content">
           <h1>Sinh viên</h1>
           <h2>Dịch vụ sinh viên</h2>
@@ -158,6 +191,12 @@ const HistoryPage = () => {
             numColumns={7}
             tableName={"Lịch sử in"}
           />
+        </div>
+
+        <div className="bodyoption2">
+          {/* <button className="HCMUT" onClick={handleClick}>
+        HCMUT
+      </button> */}
         </div>
       </div>
     </div>

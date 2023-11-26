@@ -1,0 +1,76 @@
+.mylogin {
+  margin-top: 100px;
+}
+section {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input {
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.button1,
+.button2 {
+  background-color: #5f5e92;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.errmsg {
+  color: red;
+  margin-top: 10px;
+}
+
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 200px; /* adjust the max-width as needed */
+  width: 40%;
+  height: auto;
+  margin-bottom: 20px;
+}
+.button-container {
+  display: flex;
+  /* Adjust as needed */
+  margin-top: 10px;
+}
+.username,
+.password {
+  margin-left: 50px;
+  font-weight: bold;
+}
+.inputusername,
+.inputpassword {
+  margin-left: 50px;
+  margin-right: 50px;
+}

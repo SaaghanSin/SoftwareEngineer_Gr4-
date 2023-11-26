@@ -219,7 +219,7 @@ export default function EnhancedTable({
     } else if (selectedIndex > 0) {
       newSelected = newSelected.concat(
         selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1),
+        selected.slice(selectedIndex + 1)
       );
     }
     setSelected(newSelected);
@@ -233,7 +233,6 @@ export default function EnhancedTable({
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
-
 
   const isSelected = (id) => selected.indexOf(id) !== -1;
 
@@ -285,7 +284,7 @@ export default function EnhancedTable({
                     tabIndex={-1}
                     key={row.id}
                     selected={isItemSelected}
-                    sx={{ cursor: 'pointer' }}
+                    sx={{ cursor: "pointer" }}
                   >
                     <TableCell padding="checkbox">
                       <Checkbox
@@ -299,7 +298,12 @@ export default function EnhancedTable({
                     {headCells.map((headCell, columnIndex) => (
                       <TableCell
                         key={headCell.id}
-                        align={columnIndex === 0 ? 'left' : 'right'}
+                        align={columnIndex === 0 ? "left" : "right"}
+                        style={{
+                          backgroundColor: isItemSelected
+                            ? "#e0e0e0" // Background color for selected rows
+                            : "initial", // Default background color
+                        }}
                       >
                         {row[headCell.id]}
                       </TableCell>
@@ -331,5 +335,4 @@ export default function EnhancedTable({
       </Paper>
     </Box>
   );
-
 }

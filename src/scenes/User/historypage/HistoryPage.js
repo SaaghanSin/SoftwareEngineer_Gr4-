@@ -3,6 +3,7 @@ import EnhancedTable from "../../../components/table/table";
 import "./HistoryPage.css";
 import { ProSidebarProvider } from "react-pro-sidebar";
 import "../../../components/option_info/option2.css";
+import Clock from "../../../components/clock/clock";
 const HistoryPage = () => {
   function createData(
     id,
@@ -75,7 +76,7 @@ const HistoryPage = () => {
       2110992,
       1,
       "abc.pdf",
-      "In thành công",
+      "Thất bại",
       "2023-11-07 08:42",
       "2023-11-07 08:43",
       1
@@ -85,7 +86,7 @@ const HistoryPage = () => {
       2110992,
       2,
       "abc.pdf",
-      "In thành công",
+      "Thất bại",
       "2023-11-07 08:42",
       "2023-11-07 08:43",
       1
@@ -155,7 +156,7 @@ const HistoryPage = () => {
       2110992,
       9,
       "abc.pdf",
-      "In thành công",
+      "Thất bại",
       "2023-11-07 08:42",
       "2023-11-07 08:43",
       1
@@ -165,7 +166,7 @@ const HistoryPage = () => {
       2110992,
       10,
       "abc.pdf",
-      "In thành công",
+      "Thất bại",
       "2023-11-07 08:42",
       "2023-11-07 08:43",
       1
@@ -180,6 +181,7 @@ const HistoryPage = () => {
         <ProSidebarProvider>
           <UserSideBar />
         </ProSidebarProvider>
+
         <div className="history-page-content">
           <h1>Sinh viên</h1>
           <h2>Dịch vụ sinh viên</h2>
@@ -190,6 +192,7 @@ const HistoryPage = () => {
             tableName={"Lịch sử in"}
           />
         </div>
+
         <div className="bodyoption2">
           {/* <button className="HCMUT" onClick={handleClick}>
         HCMUT

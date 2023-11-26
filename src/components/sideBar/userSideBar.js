@@ -14,6 +14,7 @@ import SideBarFooter from "./sideBarFooter";
 import AboveSideBar from "./sideBarAbove";
 import pdf from "../../assets/pdf/guide.pdf";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
+import Clock from "../clock/clock";
 const UserSideBar = () => {
   const location = useLocation();
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
@@ -103,6 +104,7 @@ const UserSideBar = () => {
           textAlign: "center",
         }}
       >
+        <Clock></Clock>
         <SideBarFooter />
       </div>
     </Sidebar>

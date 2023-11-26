@@ -14,6 +14,7 @@ import SideBarFooter from "./sideBarFooter";
 import AboveSideBar from "./sideBarAbove";
 import pdf from "../../assets/pdf/guide.pdf";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
+import Clock from "../clock/clock";
 const UserSideBar = () => {
   const location = useLocation();
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
@@ -37,7 +38,19 @@ const UserSideBar = () => {
     }
   };
   return (
-    <Sidebar className="user-side-bar" backgroundColor="#0c0b3b" color="white">
+    <Sidebar
+      style={{
+        backgroundColor: "#0c0b3b",
+        color: "white",
+        position: "fixed",
+        top: 0,
+        bottom: 0,
+        overflowY: "auto",
+        transition: "all 0.3s",
+        zIndex: 1000,
+      }}
+      backgroundColor="#0c0b3b"
+    >
       <AboveSideBar />
 
       <SideBarHeader />
@@ -91,6 +104,7 @@ const UserSideBar = () => {
           textAlign: "center",
         }}
       >
+        <Clock></Clock>
         <SideBarFooter />
       </div>
     </Sidebar>

@@ -7,7 +7,7 @@ import SideBarHeader from "./sideBarHeader";
 import SideBarFooter from "./sideBarFooter";
 import AboveSideBar from "./sideBarAbove";
 import pdf from "../../assets/pdf/guide.pdf";
-
+import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 const SPSOSidebar = () => {
   const location = useLocation();
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
@@ -20,7 +20,7 @@ const SPSOSidebar = () => {
   }, [location.pathname]);
 
   return (
-    <Sidebar className="spso-side-bar">
+    <Sidebar className="spso-side-bar" backgroundColor="#0c0b3b">
       <AboveSideBar />
 
       <SideBarHeader />
@@ -50,6 +50,14 @@ const SPSOSidebar = () => {
         >
           <MenuItem icon={<FaBook />}>Tài liệu hướng dẫn</MenuItem>
         </a>
+        <Link
+          to="/"
+          className={`link-style sidebar-btn ${
+            selectedMenuItem === "" ? "selected" : ""
+          }`}
+        >
+          <MenuItem icon={<LogoutRoundedIcon />}>Đăng xuất</MenuItem>
+        </Link>
       </Menu>
       <div
         className="sidebar-btn-wrapper"

@@ -7,7 +7,7 @@ import MyButton from "../../../components/button/Button";
 import "./BalancePage.css";
 import TextField from "../../../components/textField/textField";
 import { ProSidebarProvider } from "react-pro-sidebar";
-
+import "../../../components/option_info/option3.css";
 const BalancePage = () => {
   function createData(ID, date, paymentAmount, numberOfPage, paymentMethod) {
     return {
@@ -91,6 +91,16 @@ const BalancePage = () => {
         )}
       </div>
       {showPaymentWin && <PaymentWin handleClose={handleClosePaymentWin} />}
+      <div className="bodyoption3">
+        {/* <button className="HCMUT" onClick={handleClick}>
+        HCMUT
+      </button> */}
+      </div>
+      <div className="footer-main">
+        {/* <button className="HCMUT" onClick={handleClick}>
+        HCMUT
+      </button> */}
+      </div>
     </div>
   );
 };

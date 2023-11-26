@@ -1,5 +1,6 @@
 import React from "react";
 import "./paymentWin.css";
+
 const PaymentWin = ({ handleClose }) => {
   return (
     <div className="payment-win-container">

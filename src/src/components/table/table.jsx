@@ -87,7 +87,7 @@ function EnhancedTableHead(props) {
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-            align={headCell.numeric ? "right" : "left"}
+            align={headCell.numeric ? "center" : "center"}
             padding={headCell.disablePadding ? "none" : "normal"}
             sortDirection={orderBy === headCell.id ? order : false}
           >
@@ -222,7 +222,7 @@ export default function EnhancedTable({
     } else if (selectedIndex > 0) {
       newSelected = newSelected.concat(
         selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1),
+        selected.slice(selectedIndex + 1)
       );
     }
     setSelected(newSelected);
@@ -257,7 +257,7 @@ export default function EnhancedTable({
 
   return (
     <Box sx={{ width: "100%" }} className="mybox">
-      <Paper sx={{ width: "100%", mb: 2 }}>
+      <Paper sx={{ width: "100%", mb: 1 }}>
         <EnhancedTableToolbar
           numSelected={selected.length}
           tableName={tableName}
@@ -265,7 +265,7 @@ export default function EnhancedTable({
         />
         <TableContainer>
           <Table
-            sx={{ minWidth: 1200 }}
+            sx={{ minWidth: 1100 }}
             aria-labelledby="tableTitle"
             className="mytable"
           >
@@ -278,7 +278,7 @@ export default function EnhancedTable({
               rowCount={rows.length}
               headCells={headCells}
             />
-            <TableBody>
+            <TableBody className="tablebody">
               {visibleRows.map((row, index) => {
                 const isItemSelected = isSelected(row.id);
                 const labelId = `enhanced-table-checkbox-${index}`;
@@ -291,7 +291,7 @@ export default function EnhancedTable({
                     tabIndex={-1}
                     key={row.id}
                     selected={isItemSelected}
-                    sx={{ cursor: 'pointer' }}
+                    sx={{ cursor: "pointer" }}
                   >
                     <TableCell padding="checkbox">
                       <Checkbox
@@ -305,7 +305,23 @@ export default function EnhancedTable({
                     {headCells.map((headCell, columnIndex) => (
                       <TableCell
                         key={headCell.id}
-                        align={columnIndex === 0 ? 'left' : 'right'}
+                        align={columnIndex === 0 ? "center" : "center"}
+                        style={{
+                          backgroundColor:
+                            row[headCell.id] === "In thành công"
+                              ? "#86e49d"
+                              : row[headCell.id] === "Thất bại"
+                              ? "#d898a3"
+                              : "initial",
+                          color:
+                            row[headCell.id] === "In thành công"
+                              ? "#006b21"
+                              : row[headCell.id] === "Thất bại"
+                              ? "#b30021"
+                              : "initial",
+
+                          backgroundClip: "content-box",
+                        }}
                       >
                         {row[headCell.id]}
                       </TableCell>
@@ -337,5 +353,4 @@ export default function EnhancedTable({
       </Paper>
     </Box>
   );
-
 }

@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React, { useState } from "react";
 import UserSideBar from "../../../components/sideBar/userSideBar";
 import EnhancedTable from "../../../components/table/table";
-import PaymentWin from "../payment/paymentWin";
+import PaymentWin from "../../../components/paymentDialog/paymentWin";
 import MyButton from "../../../components/button/Button";
 import "./BalancePage.css";
 import TextField from "../../../components/textField/textField";

@@ -189,7 +189,7 @@ export default function EnhancedTable({
   tableName,
 }) {
   const [order, setOrder] = React.useState("asc");
-  const [orderBy, setOrderBy] = React.useState("calories");
+  const [orderBy, setOrderBy] = React.useState("");
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
@@ -305,7 +305,23 @@ export default function EnhancedTable({
                     {headCells.map((headCell, columnIndex) => (
                       <TableCell
                         key={headCell.id}
-                        align={columnIndex === 0 ? "cener" : "center"}
+                        align={columnIndex === 0 ? "center" : "center"}
+                        style={{
+                          backgroundColor:
+                            row[headCell.id] === "In thành công"
+                              ? "#86e49d"
+                              : row[headCell.id] === "Thất bại"
+                              ? "#d898a3"
+                              : "initial",
+                          color:
+                            row[headCell.id] === "In thành công"
+                              ? "#006b21"
+                              : row[headCell.id] === "Thất bại"
+                              ? "#b30021"
+                              : "initial",
+
+                          backgroundClip: "content-box",
+                        }}
                       >
                         {row[headCell.id]}
                       </TableCell>
@@ -338,3 +354,4 @@ export default function EnhancedTable({
     </Box>
   );
 }
+  
