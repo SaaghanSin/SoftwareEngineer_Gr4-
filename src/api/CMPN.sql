@@ -1,202 +1,299 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+07:00";
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+--
+-- Cơ sở dữ liệu: `dichvuin`
+--
 
-create table tai_khoan(
-	TenDangNhap varchar(30) primary key,
-	ThoiDiemMoTaiKhoan date not null,
-	MatKhau varchar(30) not null,
-	NgayDangNhapCuoi date not null,
-	GioDangNhapCuoi time not null
-);
-
-create table tai_khoan_SDT(
-	TenDangNhap varchar(30) not null,
-	SDT varchar(12) not null
-);
-
-create table tai_khoan_email(
-	TenDangNhap varchar(30) not null,
-	email varchar(30) not null unique
-);
-
-create table sinh_vien(
-	TenDangNhap varchar(30) not null,
-	MSSV int not null unique,
-	HoTenDem varchar(40) not null,
-	Ten varchar(10) not null,
-	Khoa varchar(3) not null,
-	SoTrangSoHuu int not null,
-	LopSinhHoat varchar(8) not null
-);
-
- create table SPSO(
- 	TenDangNhap varchar(30) not null,
-	MaSPSO varchar(8) not null,
-	HoTenDem varchar(40) not null,
-	Ten varchar(10) not null
-);
- 
- create table SV_LichSuMuaGiay(
- 	TenDangNhap varchar(30) ,
-	SoTrangMua int not null,
-	NgayMuaGiay date not null,
-	GioMuaGiay time not null,
-	TongSoTienThanhToan int not null,
-	PhuongThucThanhToan varchar(30) not null
-);
-
-create table may_in(
-	MaMayIn varchar(8) primary key,
-	CoSo varchar(50) not null,
-	Toa varchar(2) not null,
-	LoaiMayIn varchar(10) not null,
-	TrangThaiHoatDong varchar(3) not null
-);
-
-create table in_tai_lieu(
-	TenDangNhap varchar(30) not null,
-	MaMayIn varchar(8) not null,
-	GioIn time not null,
-	NgayIn date not null,
-	NgayHoanthanhIn date not null,
-	GioHoanThanhIn time not null,
-	TenFile varchar(40) not null,
-	SoTrangTrongFile int not null,
-	KhoGiay varchar(2) not null,
-	SoMatIn int not null,
-	ThoiGianHoanThanhIn time not null,
-	NgayLay date not null,
-	ThoiGianDenLay time not null,
-	SoBanIn int not null,
-	TrangThai varchar(20) not null
-);
-
-create table quan_ly(
-	MaMayIn varchar(8) not null,
-	TenDangNhap varchar(30) not null
-);
-
-alter table tai_khoan_SDT
-add primary key (TenDangNhap,SDT),
-add foreign key (TenDangNhap) references tai_khoan(TenDangNhap); 
-
-alter table tai_khoan_email
-add primary key (TenDangNhap,email),
-add foreign key (TenDangNhap) references tai_khoan(TenDangNhap); 
-
-alter table sinh_vien
-add primary key (TenDangNhap),
-add foreign key (TenDangNhap) references tai_khoan(TenDangNhap); 
-
-alter table SPSO
-add primary key (TenDangNhap),
-add foreign key (TenDangNhap) references tai_khoan(TenDangNhap); 
-
-alter table SV_LichSuMuaGiay
-add primary key (TenDangNhap, SoTrangMua, NgayMuaGiay, GioMuaGiay, TongSoTienThanhToan),
-add foreign key (TenDangNhap) references sinh_vien(TenDangNhap); 
-
-alter table in_tai_lieu
-add primary key (TenDangNhap,MaMayIn),
-add foreign key (TenDangNhap) references sinh_vien(TenDangNhap),
-add foreign key (MaMayIn) references may_in(MaMayIn);
-
-alter table quan_ly
-add primary key (MaMayIn, TenDangNhap),
-add foreign key (TenDangNhap) references SPSO(TenDangNhap),
-add foreign key (MaMayIn) references may_in(MaMayIn);
-
-
---them user
-create procedure insert_tai_khoan(a1 varchar(30),a2 date,a3 varchar(30),a4 date,a5 time)
-language sql
-as $$
-insert into tai_khoan(TenDangNhap,
-					  ThoiDiemMoTaiKhoan,
-					  MatKhau,
-					  NgayDangNhapCuoi,
-					  GioDangNhapCuoi)
-values (a1,a2,a3,a4,a5);
-$$
---xem log cuar sv theo ten tk
-create procedure xem_lich_su_in_mua_giay(stuACC varchar(30))
-language sql
-as $$
-select SoTrangMua,NgayMuaGiay ,GioMuaGiay,TongSoTienThanhToan,PhuongThucThanhToan
-from SV_LichSuMuaGiay
-where stuACC=TenDangNhap;
-$$
+-- --------------------------------------------------------
 
 --
-create procedure xem_lich_su_in_tu_SPSO(NgayXem date)
-language sql
-as $$
-select TenDangNhap,MaMayIn,TenFile,SoBanIn,TrangThai
-from in_tai_lieu
-where NgayXem=NgayIn;
-$$
+-- Cấu trúc bảng cho bảng `in_tai_lieu`
+--
 
+CREATE TABLE `hoa_don` (
+  `MaHoaDon` int(10) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  `KhoGiay` char(2) NOT NULL,
+  `SoMatIn` varchar(20) NOT NULL,
+  `TrangThai` varchar(20) NOT NULL,
+  `TenDangNhap` varchar(30) NOT NULL,
+  `ThoiGianHenLay` time NOT NULL,
+  `SoTrangTrongFile` int(10) NOT NULL,
+  `TenFile` varchar(40) NOT NULL,
+  `Pagespersheet` varchar(20) NOT NULL,
+  `GioHoanThanhIn` time NOT NULL,
+  `NgayHoanthanhIn` date NOT NULL,
+  `GioIn` time NOT NULL,
+  `NgayIn` date NOT NULL,
+  `TrangBatDau` int(10) NOT NULL,
+  `TrangKetThuc` int(10) NOT NULL,
+  `SoBanIn` int(10) NOT NULL,
+  `MaMayIn` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
-create procedure xem_lich_su_in_giao_dich(stuACC varchar(30))
-language sql
-as $$
-select SoTrangMua,NgayMuaGiay ,GioMuaGiay,TongSoTienThanhToan
-from SV_LichSuMuaGiay
-where stuACC=TenDangNhap;
-$$
+--
+-- Đang đổ dữ liệu cho bảng `in_tai_lieu`
+--
 
-create procedure them_so_trang_cho_sv(stuACC varchar(30), SoTrang int)
-language sql
-as $$
-update sinh_vien
-set SoTrangSoHuu=SoTrangSoHuu-SoTrang
-where stuACC=TenDangNhap;
-$$
+-- INSERT INTO `in_tai_lieu` (`TenDangNhap`, `MaMayIn`, `GioIn`, `NgayIn`, `NgayHoanthanhIn`, `GioHoanThanhIn`, `TenFile`, `SoTrangTrongFile`, `KhoGiay`, `SoMatIn`, `ThoiGianHoanThanhIn`, `NgayLay`, `ThoiGianDenLay`, `SoBanIn`, `TrangThai`) VALUES
+-- ('sinhvien1', 'MAY02', '19:44:32', '2023-11-28', '2023-11-28', '19:44:32', '1701197072_TestReport.xls', 4, 'A', 4, '19:44:32', '2023-11-28', '19:44:32', 2, 'ok'),
+-- ('sinhvien2', 'MAY02', '19:45:31', '2023-11-28', '2023-11-28', '19:45:31', '1701197131_TestReport.xls', 4, 'A', 4, '19:45:31', '2023-11-28', '19:45:31', 2, 'ok');
 
-create procedure them_may_in(a1 varchar(30),a2 varchar(50),a3 varchar(2),a4 varchar(10),a5 varchar(3))
-language sql
-as $$
-insert into may_in(MaMayIn ,CoSo,Toa,LoaiMayIn,TrangThaiHoatDong)
-values (a1,a2,a3,a4,a5);
-$$
+-- --------------------------------------------------------
 
-create procedure cap_nhat_may_in_ON(a1 varchar(8),a2 varchar(50),a3 varchar(2),a4 varchar(10))
-language sql
-as $$
-update may_in
-set TrangThaiHoatDong='on'
-where (a1= MaMayIn and a2=CoSo and a3=Toa and a4=LoaiMayIn);
-$$
+--
+-- Cấu trúc bảng cho bảng `may_in`
+--
 
-create procedure cap_nhat_may_in_OFF(a1 varchar(8),a2 varchar(50),a3 varchar(2),a4 varchar(10))
-language sql
-as $$
-update may_in
-set TrangThaiHoatDong='off'
-where (a1= MaMayIn and a2=CoSo and a3=Toa and a4=LoaiMayIn);
-$$
+CREATE TABLE `may_in` (
+  `MaMayIn` varchar(10) NOT NULL,
+  `CoSo` varchar(1) NOT NULL,
+  `Toa` varchar(2) NOT NULL,
+  `LoaiMayIn` varchar(10) NOT NULL,
+  `TrangThaiHoatDong` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
-create procedure xoa_may_in(a1 varchar(8),a2 varchar(50),a3 varchar(2),a4 varchar(10))
-language sql
-as $$
-delete from may_in
-where (a1= MaMayIn and a2=CoSo and a3=Toa and a4=LoaiMayIn);
-$$
+--
+-- Đang đổ dữ liệu cho bảng `may_in`
+--
 
+INSERT INTO `may_in` (`MaMayIn`, `CoSo`, `Toa`, `LoaiMayIn`, `TrangThaiHoatDong`) VALUES
+('MAY02', '1', 'B10', 'Lazer', 'Hoàn Thành'),
+('MAY03', '2', 'H3', 'Lazer', 'Hoàn Thành');
 
+-- --------------------------------------------------------
 
+--
+-- Cấu trúc bảng cho bảng `quan_ly`
+--
 
---drop schema public cascade;
+CREATE TABLE `quan_ly` (
+  `MaMayIn` varchar(10) NOT NULL,
+  `TenDangNhap` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
+-- --------------------------------------------------------
 
+--
+-- Cấu trúc bảng cho bảng `sinh_vien`
+--
 
+CREATE TABLE `sinh_vien` (
+  `TenDangNhap` varchar(30) NOT NULL,
+  `MSSV` int(7) NOT NULL,
+  `HoTenDem` varchar(40) NOT NULL,
+  `Ten` varchar(10) NOT NULL,
+  `Khoa` varchar(3) NOT NULL,
+  `SoTrangSoHuu` int(11) NOT NULL,
+  `LopSinhHoat` varchar(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `sinh_vien`
+--
 
+INSERT INTO `sinh_vien` (`TenDangNhap`, `MSSV`, `HoTenDem`, `Ten`, `Khoa`, `SoTrangSoHuu`, `LopSinhHoat`) VALUES
+('hiuchoet123', 2110168, 'Le Trung', 'Hieu', 'K21', 6, 'MTKH04'),
+('taivoslno1', 2110516, 'Vo Tan', 'Tai', 'K22', 4, 'MTKH01'),
+('khanhmap1213', 2110250, 'Lai Nguyen Tuan', 'Khanh', 'K21', 15, 'MTKH03');
 
+-- --------------------------------------------------------
 
+--
+-- Cấu trúc bảng cho bảng `spso`
+--
 
+CREATE TABLE `spso` (
+  `TenDangNhap` varchar(30) NOT NULL,
+  `MaSPSO` varchar(8) NOT NULL,
+  `HoTenDem` varchar(40) NOT NULL,
+  `Ten` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
+-- --------------------------------------------------------
 
+--
+-- Cấu trúc bảng cho bảng `sv_lichsumuagiay`
+--
 
+CREATE TABLE `sv_lichsumuagiay` (
+  `TenDangNhap` varchar(30) NOT NULL,
+  `SoTrangMua` int(11) NOT NULL,
+  `NgayMuaGiay` date NOT NULL,
+  `GioMuaGiay` time NOT NULL,
+  `TongSoTienThanhToan` int(11) NOT NULL,
+  `PhuongThucThanhToan` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `sv_lichsumuagiay`
+--
 
+-- INSERT INTO `sv_lichsumuagiay` (`TenDangNhap`, `SoTrangMua`, `NgayMuaGiay`, `GioMuaGiay`, `TongSoTienThanhToan`,'PhuongThucThanhToan') VALUES
+-- ('sinhvien1', 2, '2023-11-28', '19:44:32', 200000,'Momo'),
+-- ('sinhvien1', 4, '0000-00-00', '11:05:05', 50000,'Credit'),
+-- ('sinhvien2', 2, '2023-11-28', '19:45:31', 200000,'ZaloPay');
 
+-- --------------------------------------------------------
 
+--
+-- Cấu trúc bảng cho bảng `tai_khoan`
+--
+
+CREATE TABLE `tai_khoan` (
+  `TenDangNhap` varchar(30) NOT NULL,
+  `ThoiDiemMoTaiKhoan` date NOT NULL,
+  `MatKhau` varchar(30) NOT NULL,
+  `NgayDangNhapCuoi` date NOT NULL,
+  `GioDangNhapCuoi` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tai_khoan`
+--
+
+INSERT INTO `tai_khoan` (`TenDangNhap`, `ThoiDiemMoTaiKhoan`, `MatKhau`, `NgayDangNhapCuoi`, `GioDangNhapCuoi`) VALUES
+('hiuchoet123', '2023-10-19', '143243223456', '2023-11-24', '00:00:11'),
+('taivoslno1', '2022-12-15', '123452126', '0000-00-00', '00:00:11'),
+('khanhmap1213', '0000-00-00', '123421312356', '0000-00-00', '00:00:11');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tai_khoan_email`
+--
+
+CREATE TABLE `tai_khoan_email` (
+  `TenDangNhap` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tai_khoan_sdt`
+--
+
+CREATE TABLE `tai_khoan_sdt` (
+  `TenDangNhap` varchar(30) NOT NULL,
+  `SDT` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
+
+--
+-- Chỉ mục cho các bảng đã đổ
+--
+
+--
+-- Chỉ mục cho bảng `in_tai_lieu`
+--
+-- ALTER TABLE `hoa_don`
+--   ADD PRIMARY KEY (`MaHoaDon`),
+--   ADD KEY `MaHoaDon` (`MaHoaDon`);
+--
+-- Chỉ mục cho bảng `may_in`
+--
+ALTER TABLE `may_in`
+  ADD PRIMARY KEY (`MaMayIn`);
+
+--
+-- Chỉ mục cho bảng `quan_ly`
+--
+ALTER TABLE `quan_ly`
+  ADD PRIMARY KEY (`MaMayIn`,`TenDangNhap`),
+  ADD KEY `TenDangNhap` (`TenDangNhap`);
+
+--
+-- Chỉ mục cho bảng `sinh_vien`
+--
+ALTER TABLE `sinh_vien`
+  ADD PRIMARY KEY (`TenDangNhap`),
+  ADD UNIQUE KEY `MSSV` (`MSSV`);
+
+--
+-- Chỉ mục cho bảng `spso`
+--
+ALTER TABLE `spso`
+  ADD PRIMARY KEY (`TenDangNhap`);
+
+--
+-- Chỉ mục cho bảng `sv_lichsumuagiay`
+--
+ALTER TABLE `sv_lichsumuagiay`
+  ADD PRIMARY KEY (`TenDangNhap`,`SoTrangMua`,`NgayMuaGiay`,`GioMuaGiay`,`TongSoTienThanhToan`,`PhuongThucThanhToan`);
+
+--
+-- Chỉ mục cho bảng `tai_khoan`
+--
+ALTER TABLE `tai_khoan`
+  ADD PRIMARY KEY (`TenDangNhap`);
+
+--
+-- Chỉ mục cho bảng `tai_khoan_email`
+--
+ALTER TABLE `tai_khoan_email`
+  ADD PRIMARY KEY (`TenDangNhap`,`email`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Chỉ mục cho bảng `tai_khoan_sdt`
+--
+ALTER TABLE `tai_khoan_sdt`
+  ADD PRIMARY KEY (`TenDangNhap`,`SDT`),
+  ADD UNIQUE KEY `SDT` (`SDT`);
+--
+-- Các ràng buộc cho các bảng đã đổ
+--
+
+--
+-- Các ràng buộc cho bảng `in_tai_lieu`
+--
+ALTER TABLE `hoa_don`
+  ADD CONSTRAINT `hoa_don_ibfk_1` FOREIGN KEY (`TenDangNhap`) REFERENCES `sinh_vien` (`TenDangNhap`),
+  ADD CONSTRAINT `hoa_don_ibfk_2` FOREIGN KEY (`MaMayIn`) REFERENCES `may_in` (`MaMayIn`);
+
+--
+-- Các ràng buộc cho bảng `quan_ly`
+--
+ALTER TABLE `quan_ly`
+  ADD CONSTRAINT `quan_ly_ibfk_1` FOREIGN KEY (`TenDangNhap`) REFERENCES `spso` (`TenDangNhap`),
+  ADD CONSTRAINT `quan_ly_ibfk_2` FOREIGN KEY (`MaMayIn`) REFERENCES `may_in` (`MaMayIn`);
+
+--
+-- Các ràng buộc cho bảng `sinh_vien`
+--
+ALTER TABLE `sinh_vien`
+  ADD CONSTRAINT `sinh_vien_ibfk_1` FOREIGN KEY (`TenDangNhap`) REFERENCES `tai_khoan` (`TenDangNhap`);
+
+--
+-- Các ràng buộc cho bảng `spso`
+--
+ALTER TABLE `spso`
+  ADD CONSTRAINT `spso_ibfk_1` FOREIGN KEY (`TenDangNhap`) REFERENCES `tai_khoan` (`TenDangNhap`);
+
+--
+-- Các ràng buộc cho bảng `sv_lichsumuagiay`
+--
+ALTER TABLE `sv_lichsumuagiay`
+  ADD CONSTRAINT `sv_lichsumuagiay_ibfk_1` FOREIGN KEY (`TenDangNhap`) REFERENCES `sinh_vien` (`TenDangNhap`);
+
+--
+-- Các ràng buộc cho bảng `tai_khoan_email`
+--
+ALTER TABLE `tai_khoan_email`
+  ADD CONSTRAINT `tai_khoan_email_ibfk_1` FOREIGN KEY (`TenDangNhap`) REFERENCES `tai_khoan` (`TenDangNhap`);
+
+--
+-- Các ràng buộc cho bảng `tai_khoan_sdt`
+--
+ALTER TABLE `tai_khoan_sdt`
+  ADD CONSTRAINT `tai_khoan_sdt_ibfk_1` FOREIGN KEY (`TenDangNhap`) REFERENCES `tai_khoan` (`TenDangNhap`);
+COMMIT;
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;

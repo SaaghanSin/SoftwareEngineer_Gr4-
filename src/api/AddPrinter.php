@@ -7,7 +7,7 @@ include('function.php');
 $requestmethod=$_SERVER["REQUEST_METHOD"];
 if ($requestmethod=="POST")
 {
-    $inputPrinter=json_decode(file_get_contents("php://input"));
+    $inputPrinter=json_decode(file_get_contents("php://input"), true);
     if (empty($inputPrinter)){
         $storePrinter= addPrinter($_POST);
     }
@@ -16,7 +16,6 @@ if ($requestmethod=="POST")
 }
 else {
     $data =[
-        'status'=>405,
         'message'=>$requestmethod. ' Method not allow',
     ];
     header("HTTP/1.0 method not allowed");

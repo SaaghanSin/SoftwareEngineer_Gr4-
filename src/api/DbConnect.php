@@ -1,23 +1,17 @@
 <?php
-$host = "localhost";
-$port = "5432";
-$dbname = "TempDB";
-$user = "postgres";
-$password = "0000";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname="cnpm";
 
-// Connection string
-$dsn = "host=$host port=$port dbname=$dbname user=$user password=$password";
-
-// Connect to the PostgreSQL database
-$conn = pg_connect($dsn);
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
 // Check the connection
 if (!$conn) {
-    die("Connection failed: " . pg_last_error());
+    die("Connection failed: " . mysqli_connect_error());
 }
 
 echo "Connected successfully";
 
 // Perform database operations here
-
-

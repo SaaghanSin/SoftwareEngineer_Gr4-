@@ -12,7 +12,6 @@ if ($requestmethod=="GET")
 }
 else {
     $data =[
-        'status'=>405,
         'message'=>$requestmethod. 'Method not allow',
     ];
     header("HTTP/1.0 method not allowed");
