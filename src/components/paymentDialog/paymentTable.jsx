@@ -24,12 +24,10 @@ const PaymentTable = () => {
   };
 
   const rowData = [
-    ['Size', 'Giá một tờ ', 'Quy đổi sang số trang A4'],
-    ['A1', '8000đ', '8'],
-    ['A2', '4000đ', '4'],
-    ['A3', '2000đ', '2'],
-    ['A4', '1000đ', '1'],
-    ['A5', '500đ', '0.5'],
+    ['Size', 'Giá một tờ ', 'Quy đổi sang số trang A5'],
+    ['A3', '2000đ', '4'],
+    ['A4', '1000đ', '2'],
+    ['A5', '500đ', '1'],
   ];
 
   return (
@@ -38,10 +36,10 @@ const PaymentTable = () => {
         <tr>
           <th style={{ ...cellStyle, backgroundColor: '#f2f2f2' }} colSpan="3">
             <div style={div1Style}>
-              Lưu ý: 1 trang mua = 1 tờ A4
+              Lưu ý: 1 trang mua = 1 tờ A5
             </div>
             <div style={div2Style}>
-              Ví dụ: để in 1 tờ A3 cần nhập vào ô số trang cần mua với số lượng là 2 vì A3 =2 A4
+              Ví dụ: để in 1 tờ A3 cần nhập vào ô số trang cần mua với số lượng là 4 vì A3 =2 A4 = 4 A5
             </div>
           </th>
         </tr>

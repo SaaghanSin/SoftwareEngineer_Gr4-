@@ -74,7 +74,7 @@ const BalancePage = () => {
         <UserSideBar />
       </ProSidebarProvider>
       <div className="balance-page-content">
-        <h1>Sinh viên</h1>
+        {/* <h1>Sinh viên</h1> */}
         <h2>Dịch vụ sinh viên</h2>
         <div className="balance-function">
           <MyButton onClick={handleShowPaymentWin}>Mua thêm trang</MyButton>

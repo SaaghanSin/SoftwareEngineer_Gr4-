@@ -1,0 +1,7 @@
+.mynumfile2 {
+  border-radius: 15px;
+  margin-bottom: -2px;
+  &:hover {
+    border-color: #4caf50; /* Change border color on hover */
+  }
+}

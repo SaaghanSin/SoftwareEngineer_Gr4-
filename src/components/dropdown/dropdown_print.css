@@ -1,0 +1,49 @@
+/* dropdown_print.css */
+
+.custom-dropdown {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: border-color 0.3s ease; /* Add a smooth transition for dropdown border color */
+  width: 290px;
+  height: 34px;
+  font-size: 11.5px;
+  background-color: #fff;
+  /* Styling for when the dropdown is hovered */
+  &:hover {
+    border-color: #4caf50; /* Change border color on hover */
+  }
+}
+
+/* Styling for individual dropdown options */
+.custom-dropdown option {
+  padding: 8px;
+  transition: background-color 0.3s ease; /* Add a smooth transition for background color */
+  margin-top: -10px;
+
+  /* Styling for when the option is hovered */
+  &:hover {
+    background-color: #4caf50; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+  }
+}
+
+/* Styling for the default option */
+.item_in_dropdown {
+  /* Customize the default option styling here */
+  color: #555; /* Change text color */
+  font-style: italic; /* Italicize the text */
+  border-radius: 15px;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  font-size: 15px;
+}
+.item_in_dropdown:hover {
+  /* Customize the default option styling here */
+  background-color: #4caf50;
+  color: #555; /* Change text color */
+  font-style: italic; /* Italicize the text */
+  border-radius: 10px;
+}

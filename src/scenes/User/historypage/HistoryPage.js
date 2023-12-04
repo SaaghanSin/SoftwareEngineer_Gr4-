@@ -183,7 +183,7 @@ const HistoryPage = () => {
         </ProSidebarProvider>
 
         <div className="history-page-content">
-          <h1>Sinh viên</h1>
+          {/* <h1>Sinh viên</h1> */}
           <h2>Dịch vụ sinh viên</h2>
           <EnhancedTable
             rows={rows}

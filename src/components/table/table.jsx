@@ -312,6 +312,10 @@ export default function EnhancedTable({
                               ? "#86e49d"
                               : row[headCell.id] === "Thất bại"
                               ? "#d898a3"
+                              : row[headCell.id] === "Hoạt động"
+                              ? "#86e49d"
+                              : row[headCell.id] === "Ngừng hoạt động"
+                              ? "#d898a3"
                               : "initial",
                           color:
                             row[headCell.id] === "In thành công"
@@ -354,4 +358,3 @@ export default function EnhancedTable({
     </Box>
   );
 }
-  

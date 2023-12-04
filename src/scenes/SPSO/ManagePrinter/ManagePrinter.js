@@ -3,6 +3,8 @@ import * as React from "react";
 import "./ManagePrinter.css";
 import EnhancedTable from "../../../components/table/table";
 import SPSOSidebar from "../../../components/sideBar/spsoSideBar";
+import Button_login from "../../../components/button/button_login/button_login";
+import Button_mayin from "../../../components/button/button_mayin/button_mayin";
 const ManagePrinter = () => {
   function createData(id, IDPrinter, Campus, Block, Room, Type, Status) {
     return {
@@ -63,14 +65,21 @@ const ManagePrinter = () => {
     <div className="manage-page-container">
       <SPSOSidebar />
       <div className="manage-page-content">
-        <h1>Ban quản lí</h1>
+        {/* <h1>Ban quản lí</h1> */}
         <h2>Dịch vụ quản lí</h2>
-        <EnhancedTable
-          rows={rows}
-          headCells={headCells}
-          numColumns={6}
-          tableName={"Danh sách máy in"}
-        />
+        <div className="tablemayin">
+          <EnhancedTable
+            rows={rows}
+            headCells={headCells}
+            numColumns={6}
+            tableName={"Danh sách máy in"}
+          />
+        </div>
+        <div className="buttonmayin">
+          <Button_login>Thêm máy in</Button_login>
+          <Button_login>Xóa máy in</Button_login>
+          <Button_mayin>Điều chỉnh thông tin máy in</Button_mayin>
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,73 @@
+.divform {
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 340px;
+  margin-left: 510px;
+  margin-top: 120px;
+}
+.benphai123 {
+  margin-left: -50px;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: row;
+  margin-top: -40px;
+}
+.label-container214 {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  /* margin-bottom: 0px; */
+  font-size: 13px;
+  margin-right: 5px;
+  width: 100px;
+}
+.dropdown-container12345 {
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+  margin-left: 10px;
+}
+.label-11 {
+  margin-left: 60px;
+  margin-top: 20px;
+  width: fit-content;
+}
+.label-22 {
+  margin-left: 70px;
+  width: fit-content;
+}
+.label-33 {
+  margin-left: 53px;
+
+  width: fit-content;
+}
+.label-44 {
+  margin-left: 20px;
+
+  width: fit-content;
+}
+
+.label-55 {
+  margin-left: 29px;
+  margin-bottom: 8px;
+  width: fit-content;
+}
+.thongsocandieuchinh {
+  display: flex;
+  flex-direction: column;
+}
+.diviconn {
+  margin-left: 30px;
+  margin-right: -25px;
+  margin-top: -20px;
+}
+.button_inform {
+  display: flex;
+  flex-direction: row;
+  margin-top: 260px;
+  margin-left: -430px;
+}

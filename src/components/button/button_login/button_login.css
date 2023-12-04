@@ -1,6 +1,6 @@
 .button_login {
   height: 40px;
-  width: 95px;
+  width: fit-content;
   color: white;
   background-color: #0c0b3b;
   border: none;
