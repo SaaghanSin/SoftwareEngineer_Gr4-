@@ -6,8 +6,6 @@
 - Source code for the Website
 
 ## Contributors
-<!-- readme: contributors -start -->
-<!-- readme: contributors -end -->
 
 ## Usage
 Các file ảnh + mô tả diagram ở các nhánh task 1.1 - task 3.2
