@@ -1,0 +1,85 @@
+/* formmayin.css */
+
+.divform {
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 340px;
+}
+
+.benphai123 {
+  margin-left: -50px;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: row;
+  margin-top: -40px;
+}
+
+.label-container214 {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  font-size: 13px;
+  margin-right: 5px;
+  width: 100px;
+}
+
+.dropdown-container12345 {
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+  margin-left: 10px;
+}
+
+.label-11 {
+
+  margin-top: 20px;
+  width: fit-content;
+}
+
+.label-22 {
+
+  width: fit-content;
+}
+
+.label-33 {
+
+  width: fit-content;
+}
+
+.label-44 {
+
+  width: fit-content;
+}
+
+.label-55 {
+  margin-bottom: 8px;
+  width: fit-content;
+}
+
+.thongsocandieuchinh {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.formbutton {
+  /* Add your desired styles here */
+  background-color: #3498db; /* Example background color */
+  color: #ffffff; /* Example text color */
+  width: fit-content;
+  padding: 10px 15px; /* Example padding */
+  border: none; /* Example border styles */
+  border-radius: 5px; /* Example border radius */
+  cursor: pointer; /* Add a pointer cursor on hover */
+  position: relative;
+  margin-left: 250px;
+}
+
+.formbutton:hover {
+  /* Add styles for hover state if needed */
+  background-color: #2980b9; /* Example hover background color */
+}

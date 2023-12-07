@@ -1,0 +1,20 @@
+.button_login {
+  height: 40px;
+  width: fit-content;
+  color: white;
+  background-color: #0c0b3b;
+  border: none;
+  outline: none;
+  font-family: VisbyRoundCF-DemiBold;
+  cursor: pointer;
+  transition: all 0.44s ease;
+  -webkit-animation: all 0.44s ease;
+  -moz-animation: all 0.44s ease;
+  padding: 0px 18px;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-left: 55px;
+}
+.button_login:hover {
+  background-color: rgb(30, 30, 188);
+}

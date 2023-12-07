@@ -1,0 +1,8 @@
+#datepicker {
+  width: 100%; /* Set the width of the input to 100% */
+  box-sizing: border-box;
+  margin-top: 5px; /* Add some top margin for spacing */
+}
+input[type="date"] {
+  background-color: #d1d1d1;
+}

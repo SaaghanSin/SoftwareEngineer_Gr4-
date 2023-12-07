@@ -1,0 +1,31 @@
+.manage-page-container {
+    display: flex;
+  }
+  
+  .manage-page-content {
+    margin-left: 20px;
+  }
+  
+  .manage-function {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .manage-info {
+    border: 1px solid #e8e8e8;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  

@@ -1,0 +1,36 @@
+.bodyoption1 {
+  background-image: url("/src/assets/images/option.png");
+  margin-top: 750px;
+  background-size: cover;
+  width: 1230px;
+  height: 310px;
+  padding: 50px 0;
+  margin-left: -761px;
+}
+.HCMUT {
+  position: absolute; /* Position the button relative to the nearest positioned ancestor */
+  bottom: -15%; /* Adjust the top position as needed */
+  right: 50%; /* Adjust the left position as needed */
+}
+.HCMUT:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.HCMUT:focus,
+.HCMUT:active {
+  outline: none; /* Remove the default outline on focus/active */
+  background-color: transparent;
+  color: none;
+  border-color: transparent;
+}
+/* .footer-main {
+  background: #0d5ca1b0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+} */

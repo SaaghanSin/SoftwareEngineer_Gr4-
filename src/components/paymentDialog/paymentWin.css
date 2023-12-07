@@ -1,0 +1,85 @@
+/* PaymentWin.css */
+
+.payment-win-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.payment-win-content {
+  display: flex; /* Change to flex to allow children to be flex items */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-left: 200px;
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* Ensure full width */
+}
+
+.price-table {
+  flex: 1; /* Allow the price-table to take remaining space */
+  margin-top: 35px;
+}
+
+.payment-method {
+  margin-left: 20px; /* Add margin to separate payment-method from price-table */
+}
+
+.payment-win-container button {
+  margin-top: 20px;
+}
+.bentayphai1 {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+.title_ctgd,
+.title_pttt {
+  background-color: antiquewhite;
+  border-radius: 15px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+.sotrangcanmua {
+  display: flex;
+  flex-direction: row;
+}
+.a11111 {
+  margin-top: 9px;
+  margin-right: 15px;
+  margin-left: 10px;
+  font-size: 13px;
+}
+.tongtienthanhtoan {
+  font-size: 13px;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+.tongtienthanhtoan {
+  display: flex;
+  flex-direction: row;
+}
+.sotienphaitra123 {
+  background-color: rgb(185, 233, 233);
+  margin-left: 65px;
+  border-radius: 3px;
+}
+.chi_tiet_gd {
+  margin-top: 15px;
+}
+.closemyeye {
+  margin-left: 30px;
+  margin-right: -8px;
+  margin-top: -10px;
+}

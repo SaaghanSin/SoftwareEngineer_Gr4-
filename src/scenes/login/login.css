@@ -1,0 +1,170 @@
+.mylogin {
+  margin-top: 0;
+}
+section {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  font-family: Montserrat, sans-serif;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input {
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.button1,
+.button2 {
+  background-color: #5f5e92;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.errmsg {
+  color: red;
+  margin-top: 10px;
+  font-weight: bold;
+  position: absolute;
+  margin-top: 320px;
+  margin-left: 50px;
+  font-size: 14px;
+}
+
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 200px; /* adjust the max-width as needed */
+  width: 40%;
+  height: auto;
+  margin-bottom: 20px;
+}
+.button-container {
+  display: flex;
+  /* Adjust as needed */
+  margin-top: 10px;
+}
+.username,
+.password {
+  margin-left: 50px;
+  font-weight: bold;
+}
+.inputusername,
+.inputpassword {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+/*test waves*/
+h1 {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 48px;
+}
+p {
+  font-family: "Lato", sans-serif;
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: #333333;
+}
+
+.header {
+  position: relative;
+  background: linear-gradient(
+    60deg,
+    rgba(84, 58, 183, 1) 0%,
+    rgba(0, 172, 193, 1) 100%
+  );
+  color: #000;
+}
+
+.inner-header {
+  display: flex;
+  height: 65vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 35vh;
+  margin-bottom: -25px;
+  min-height: 100px;
+  max-height: 240px;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+}
+.header {
+  padding: 20px 0;
+}
+.sectionlogin {
+  border-radius: 1rem;
+}

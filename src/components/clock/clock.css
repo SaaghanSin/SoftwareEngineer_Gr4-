@@ -1,0 +1,78 @@
+/* @font-face {
+  font-family: "FX-LED";
+  src: url("fonts/FX-LED.TTF");
+}
+@font-face {
+  font-family: "Hack";
+  src: url("fonts/Hack-Bold.ttf");
+} */
+@import url("https://fonts.googleapis.com/css?family=Orbitron");
+.alarm-clock {
+  background-color: #151414;
+  color: #fff;
+  border: rgb(44, 44, 49) solid 11px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 80px;
+  margin-top: 100px;
+  margin-left: -24px;
+}
+.date {
+  font-size: 20px;
+  /* text-transform: uppercase; */
+  padding: 0px 20px 0;
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+.day,
+.month {
+  padding: 10px 3.5px 0;
+}
+.seconds {
+  margin-left: -30px;
+  margin-right: 30px;
+}
+.time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 40px 0;
+  font-family: "Orbitron", sans-serif;
+  font-size: 25px;
+  margin-left: 55px;
+  margin-top: 10px;
+}
+.time span {
+  color: #fff;
+  text-shadow: 0 0 15px #e74c3c66;
+  line-height: 1.75;
+}
+.time span:nth-of-type(5) {
+  width: 90px;
+}
+.time span.colon {
+  width: 12px;
+  text-align: center;
+  animation: blink 2s infinite;
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

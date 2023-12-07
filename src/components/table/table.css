@@ -1,0 +1,9 @@
+.mybox {
+  margin-left: 40px;
+  margin-top: 30px;
+  max-width: 1130px;
+  border-color: aqua;
+}
+.MuiTableCell-root {
+  margin-left: 500px;
+}

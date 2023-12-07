@@ -1,0 +1,202 @@
+.info-page-container {
+  display: flex;
+}
+
+.info-page-content {
+  margin-left: 20px;
+}
+
+.info-function {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.info-info {
+  border: 1px solid #e8e8e8;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.info-page-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-page-content div {
+  margin-bottom: 10px;
+}
+/* Add this to your CSS file or style block */
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-bottom: 8px;
+}
+
+.checkbox-item input {
+  margin-right: 8px;
+}
+
+.type-permitted button {
+  margin-top: 16px;
+  padding: 8px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.type-permitted button:hover {
+  background-color: #45a049;
+}
+.savebutton {
+  background-color: red;
+}
+.save_and_modify {
+  position: relative;
+}
+
+.savebutton,
+.modifybutton_printerinfo {
+  position: absolute;
+  top: 0; /* You can adjust these values to position the buttons as needed */
+  left: 0;
+}
+.save_and_modify {
+  margin-top: 35%;
+  margin-left: -300px;
+}
+input[type="checkbox"] {
+  position: relative;
+  cursor: pointer;
+}
+input[type="checkbox"]:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  background-color: #eee;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+input[type="checkbox"]:checked:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  background-color: #1e80ef;
+}
+input[type="checkbox"]:checked:after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 2px;
+  left: 6px;
+}
+.mylableinchoose {
+  padding-bottom: 5%;
+  padding-left: 4%;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Exo:400,700");
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Exo", sans-serif;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:200");
+
+body {
+  background-image: url("https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg");
+  background-size: cover;
+  -webkit-animation: slidein 100s;
+  animation: slidein 100s;
+
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 3000px;
+  }
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+}
+
+@keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 3000px;
+  }
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(75, 75, 250, 0.3);
+  border-radius: 3px;
+}
+.center h1 {
+  text-align: center;
+  color: white;
+  font-family: "Source Code Pro", monospace;
+  text-transform: uppercase;
+}
+.header .header2inprinterinfo {
+  background-image: repeating-radial-gradient(
+    farthest-side at 5px 5px,
+    #553c9a,
+    #ee4b2b,
+    #553c9a
+  );
+}

@@ -1,0 +1,61 @@
+.statistic-page-container{
+  display:flex;
+}
+.statistic-page-content{
+  display:flex;
+  margin-right:10px;
+  margin-left:40px;
+}
+.flex-container {
+  flex-wrap: wrap;
+}
+.head-right{
+  margin-top:5px;
+  margin-left:10px;
+}
+.list-3{
+  width:1200px;
+  height:60px;
+  background-color:#FFFFFF;
+  margin-left: 40px;
+  margin-bottom:20px;
+  border-radius:7px;
+}
+.set-list{
+  margin-left:4px;
+  font-weight:700;
+}
+.statistic-list {
+  font-weight: 200;
+}
+.statistic-list ul {
+  list-style-type: none;
+  display:flex;
+}
+.statistic-list ul li {
+  margin-left:55px;
+  margin-top:7px;
+  margin-right:50px;
+}
+.check-box{
+  margin-right:10px;
+}
+#datepicker {
+  width: 20%; /* Set the width of the input to 100% */
+  box-sizing: border-box;
+  margin-top: 5px; /* Add some top margin for spacing */
+}
+.set-datepicker{
+  margin-left:10px;
+  margin-right:10px;
+}
+.set-button{
+  background-color: #0B0A3A;
+  color:#FFFFFF;
+  justify-content: center;
+  align-items: center;
+  margin-left:600px;
+  width:60px;
+  height:35px;
+  border-radius: 7px;
+}
